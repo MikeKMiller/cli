@@ -4,7 +4,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/maliceio/engine/cli/config/configfile"
+	"github.com/maliceio/cli/cli/config/configfile"
 	"github.com/maliceio/engine/pkg/homedir"
 	"github.com/pkg/errors"
 )
