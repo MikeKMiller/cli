@@ -45,7 +45,7 @@ brew:
     bash_completion.install "contrib/completion/bash/malice"
   test: |
     system "#{bin}/malice --version"
-cli
+
 fpm:
   vendor: MaliceIO
   homepage: https://malice.io/
