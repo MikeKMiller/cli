@@ -3,9 +3,9 @@ package formatter
 import (
 	"strings"
 
-	"github.com/maliceio/cli/api/types"
-	"github.com/maliceio/cli/pkg/stringid"
-	"github.com/maliceio/cli/pkg/stringutils"
+	"github.com/maliceio/engine/api/types"
+	"github.com/maliceio/engine/pkg/stringid"
+	"github.com/maliceio/engine/pkg/stringutils"
 )
 
 const (
