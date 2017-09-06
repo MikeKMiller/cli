@@ -11,8 +11,6 @@ import (
 	"time"
 
 	"github.com/Sirupsen/logrus"
-	"github.com/docker/cli/cli/command"
-	cliconfig "github.com/docker/cli/cli/config"
 	"github.com/docker/distribution/registry/client/auth"
 	"github.com/docker/distribution/registry/client/auth/challenge"
 	"github.com/docker/distribution/registry/client/transport"
@@ -28,6 +26,8 @@ import (
 	"github.com/docker/notary/trustpinning"
 	"github.com/docker/notary/tuf/data"
 	"github.com/docker/notary/tuf/signed"
+	"github.com/maliceio/cli/cli/command"
+	cliconfig "github.com/maliceio/cli/cli/config"
 	"github.com/pkg/errors"
 )
 

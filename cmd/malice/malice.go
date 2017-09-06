@@ -5,12 +5,11 @@ import (
 	"os"
 
 	"github.com/Sirupsen/logrus"
-	"github.com/maliceio/engine/cli"
-	"github.com/maliceio/engine/cli/command"
-	"github.com/maliceio/engine/cli/command/commands"
-	cliconfig "github.com/maliceio/engine/cli/config"
-	cliflags "github.com/maliceio/engine/cli/flags"
-	"github.com/maliceio/engine/malice/version"
+	"github.com/maliceio/cli/cli"
+	"github.com/maliceio/cli/cli/command"
+	"github.com/maliceio/cli/cli/command/commands"
+	cliconfig "github.com/maliceio/cli/cli/config"
+	cliflags "github.com/maliceio/cli/cli/flags"
 	"github.com/spf13/cobra"
 	"github.com/spf13/pflag"
 )
@@ -117,7 +116,7 @@ func main() {
 }
 
 func showVersion() {
-	fmt.Printf("Malice version %s, build %s\n", version.Version, version.GitCommit)
+	fmt.Printf("Malice version %s, build %s\n", cli.Version, cli.GitCommit)
 }
 
 func malicePreRun(opts *cliflags.ClientOptions) {
