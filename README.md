@@ -10,7 +10,7 @@ ___
 Docker Image
 ------------
 
-[![Docker Stars](https://img.shields.io/docker/stars/malice/cli.svg)](https://hub.docker.com/r/malice/cli/) [![Docker Pulls](https://img.shields.io/docker/pulls/malice/cli.svg)](https://hub.docker.com/r/malice/cli/) [![Docker Image](https://img.shields.io/badge/docker%20image-10.9MB-blue.svg)](https://hub.docker.com/r/malice/cli/)
+[![Docker Stars](https://img.shields.io/docker/stars/malice/cli.svg)](https://hub.docker.com/r/malice/cli/) [![Docker Pulls](https://img.shields.io/docker/pulls/malice/cli.svg)](https://hub.docker.com/r/malice/cli/) [![Docker Image](https://img.shields.io/badge/docker%20image-10.5MB-blue.svg)](https://hub.docker.com/r/malice/cli/)
 
 License
 -------
