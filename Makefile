@@ -1,8 +1,8 @@
 .PHONY: build dev size tags tar test run ssh circle push
 
-REPO=maliceio/engine
+REPO=maliceio/cli
 ORG=malice
-NAME=engine
+NAME=cli
 VERSION = $(shell cat VERSION)
 MESSAGE?="New release $(VERSION)"
 GITCOMMIT = $(shell git rev-parse --short HEAD 2> /dev/null || true)
@@ -38,16 +38,16 @@ tar: ## Export tar of docker image
 gotest: ## Run go tests
 	go test -v
 
-test: ## Test malice engine
+test: ## Test malice cli
 	docker-compose -f ./docker-compose.ci.yml up -d
-	docker-compose -f docker-compose.ci.yml run httpie http://engine:3333/login username=admin password=admin
+	docker-compose -f docker-compose.ci.yml run httpie http://cli:3333/login username=admin password=admin
 
 push: build ## Push docker image to docker registry
 	@echo "===> Pushing $(ORG)/$(NAME):$(VERSION) to docker hub..."
 	@docker push $(ORG)/$(NAME):$(VERSION)
 
-daemon: stop ## Run malice engine daemon
-	@echo "===> Starting malice engine daemon..."
+daemon: stop ## Run malice cli daemon
+	@echo "===> Starting malice cli daemon..."
 	@docker run --init -d --name $(NAME) $(ORG)/$(NAME):$(VERSION)
 
 run: stop ## Run docker container
@@ -56,7 +56,7 @@ run: stop ## Run docker container
 ssh: ## SSH into docker image
 	@docker run --init -it --rm --entrypoint=sh $(ORG)/$(NAME):$(VERSION)
 
-stop: ## Kill running malice-engine docker containers
+stop: ## Kill running malice-cli docker containers
 	@docker rm -f $(NAME) || true
 
 release: ## Create a new release from the VERSION
@@ -78,7 +78,6 @@ ci-size: ci-build
 
 clean: ## Clean docker image and stop all running containers
 	docker-clean stop
-	docker rmi maliceengine_httpie || true
 	docker rmi $(ORG)/$(NAME) || true
 	docker rmi $(ORG)/$(NAME):$(VERSION) || true
 	rm -rf dist || true

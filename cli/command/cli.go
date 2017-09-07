@@ -1,16 +1,15 @@
 package command
 
 import (
-	"context"
 	"fmt"
 	"io"
 	"net/http"
 	"os"
 	"runtime"
 
-	"github.com/docker/cli/cli"
 	"github.com/docker/go-connections/sockets"
 	"github.com/docker/go-connections/tlsconfig"
+	"github.com/maliceio/cli/cli"
 	cliconfig "github.com/maliceio/cli/cli/config"
 	"github.com/maliceio/cli/cli/config/configfile"
 	cliflags "github.com/maliceio/cli/cli/flags"
@@ -19,6 +18,7 @@ import (
 	"github.com/maliceio/engine/client"
 	"github.com/pkg/errors"
 	"github.com/spf13/cobra"
+	"golang.org/x/net/context"
 )
 
 // Cli represents the malice command line client.
@@ -39,7 +39,7 @@ type MaliceCli struct {
 	server         ServerInfo
 }
 
-// DefaultVersion returns api.defaultVersion or DOCKER_API_VERSION if specified.
+// DefaultVersion returns api.defaultVersion or MALICE_API_VERSION if specified.
 func (cli *MaliceCli) DefaultVersion() string {
 	return cli.defaultVersion
 }

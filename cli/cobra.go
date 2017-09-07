@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"strings"
 
+	"github.com/docker/docker/pkg/term"
 	"github.com/pkg/errors"
 	"github.com/spf13/cobra"
 )
@@ -79,10 +80,10 @@ func operationSubCommands(cmd *cobra.Command) []*cobra.Command {
 }
 
 func wrappedFlagUsages(cmd *cobra.Command) string {
-	width := 120
-	// if ws, err := term.GetWinsize(0); err == nil {
-	// 	width = int(ws.Width)
-	// }
+	width := 80
+	if ws, err := term.GetWinsize(0); err == nil {
+		width = int(ws.Width)
+	}
 	return cmd.Flags().FlagUsagesWrapped(width - 1)
 }
 

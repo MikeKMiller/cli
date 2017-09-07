@@ -8,9 +8,9 @@ BUILDTIME=${BUILDTIME:-$(date --utc --rfc-3339 ns 2> /dev/null | sed -e 's/ /T/'
 export LDFLAGS="\
     -s \
     -w \
-    -X github.com/maliceio/cli/malice/version.GitCommit=${GITCOMMIT} \
-    -X github.com/maliceio/cli/malice/version.BuildTime=${BUILDTIME} \
-    -X github.com/maliceio/cli/malice/version.Version=${VERSION} \
+    -X github.com/maliceio/cli/version.GitCommit=${GITCOMMIT} \
+    -X github.com/maliceio/cli/version.BuildTime=${BUILDTIME} \
+    -X github.com/maliceio/cli/version.Version=${VERSION} \
     ${LDFLAGS:-} \
 "
 echo "$LDFLAGS"
