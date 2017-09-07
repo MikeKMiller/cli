@@ -15,8 +15,8 @@ builds:
       -s
       -w
       -X github.com/maliceio/cli/version.Version={{.Version}}
-      -X github.com/maliceio/cli/malice/version.BuildTime={{.Date}}
-      -X github.com/maliceio/cli/malice/version.GitCommit={{.Commit}}
+      -X github.com/maliceio/cli/version.BuildTime={{.Date}}
+      -X github.com/maliceio/cli/version.GitCommit={{.Commit}}
 
 archive:
   files:
