@@ -9,7 +9,7 @@ import (
 
 	"github.com/Sirupsen/logrus"
 	"github.com/maliceio/cli/cli"
-	"github.com/maliceio/cli/cli/templates"
+	"github.com/maliceio/cli/templates"
 	"github.com/pkg/errors"
 )
 

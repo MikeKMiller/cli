@@ -7,7 +7,7 @@ import (
 	"text/tabwriter"
 	"text/template"
 
-	"github.com/maliceio/cli/cli/templates"
+	"github.com/maliceio/cli/templates"
 	"github.com/pkg/errors"
 )
 
